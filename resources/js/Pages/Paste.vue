@@ -35,7 +35,7 @@
                                                 <a class="flex items-center" href="#">
                                                     <img
                                                         class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
-                                                        :src="$paste.user.profile_photo_url" alt="avatar">
+                                                        src="{{paste.user.profile_photo_url}}" alt="avatar">
                                                     <h1 class="text-gray-700 font-bold">{{ paste.user.name }}</h1>
                                                 </a>
                                             </div>
