@@ -61,7 +61,7 @@ import AppLayout from './../Layouts/AppLayout'
 export default {
     name: "Paste",
     components: {AppLayout},
-    props: {pastes}
+    props: {pastes},
 }
 </script>
 
