@@ -1,4 +1,14 @@
 <template>
+    <app-layout>
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Dashboard
+            </h2>
+        </template>
+
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
     <div class="py-1">
         <div class=" min-w-full mx-auto sm:px-6 lg:px-8">
@@ -9,16 +19,14 @@
                     </div>
                 </div>
                 <div class="">
-<!--
-                    @forelse($pastes as $paste)
--->
-                    <div class="{{/*$loop->even*/1 == 1 ? 'bg-gray-200' : 'bg-gray-500'}} bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l">
+
+                    <div class="{{1 == 1 ? 'bg-gray-200' : 'bg-gray-500'}} bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l">
                         <div class="justify-between items-center flex">
-                            <span class="font-light text-gray-600">date/time<!--{{ $paste->created_at->diffForHumans()}}--></span>
+                            <span class="font-light text-gray-600">date/time</span>
                             <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" href="#">Language</a>
                         </div>
                         <div class="mt-2">
-                            <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">Title</a>{{true ? '(Forked)' : ''}}
+                            <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">Title</a>
                             <p class="mt-2 text-gray-600"><code>Description</code></p>
                         </div>
                         <div class="flex justify-between items-center mt-4">
@@ -31,9 +39,6 @@
                             </div>
                         </div>
                     </div>
-<!--
-                    @endforeach
--->
                 </div>
                 <div class="p-6 sm:px-20 bg-white">
                     <div class="mt-1 text-2xl">
@@ -44,11 +49,18 @@
         </div>
     </div>
 
+                </div>
+            </div>
+        </div>
+    </app-layout>
 </template>
 
 <script>
+import AppLayout from './../Layouts/AppLayout'
+
 export default {
-    name: "Paste"
+    name: "Paste",
+    components: {AppLayout},
 }
 </script>
 
