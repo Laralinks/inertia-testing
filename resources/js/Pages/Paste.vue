@@ -18,7 +18,7 @@
                         Latest Pastes
                     </div>
                 </div>
-                <div class="">
+                <div class="" v-for="paste in pastes">>
 
                     <div class="{{1 == 1 ? 'bg-gray-200' : 'bg-gray-500'}} bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l">
                         <div class="justify-between items-center flex">
@@ -61,6 +61,7 @@ import AppLayout from './../Layouts/AppLayout'
 export default {
     name: "Paste",
     components: {AppLayout},
+    props: {pastes}
 }
 </script>
 

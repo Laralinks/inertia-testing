@@ -8,6 +8,7 @@ use Inertia\Inertia;
 class PasteController extends Controller
 {
     public function index() {
-        return Inertia::render('Paste');
+        $pastes = Paste::where(['private' => false, 'password' => null])->latest()->paginate(5);
+        return Inertia::render('Paste', ['pastes', $pastes]);
     }
 }
