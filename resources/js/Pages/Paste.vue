@@ -19,10 +19,11 @@
                                 </div>
                                 <div class="">
                                     <div class="{{'bg-gray-200'}} bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l" v-for="paste in pastes">
+                                        {{ paste.user }}
                                         <div class="justify-between items-center flex">
                                             <span class="font-light text-gray-600">{{ paste.created_at }}</span>
                                             <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500"
-                                               href="#">Language</a>
+                                               href="#">{{ paste.pastelanguage.name }}</a>
                                         </div>
                                         <div class="mt-2">
                                             <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ paste.title }}</a>
