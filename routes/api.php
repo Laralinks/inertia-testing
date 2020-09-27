@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain('https://pastes.laravel.link')->group(function () {
-    Route::get('/', [PasteController::class, 'index']);
-
-});
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

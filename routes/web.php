@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::domain('https://pastes.laravel.link')->group(function () {
+    Route::get('/', [PasteController::class, 'index']);
+
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
