@@ -15,9 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-    Route::get('/test', [PasteController::class, 'index'])->name('pastes.index');
+Route::get('/pastes', [PasteController::class, 'index'])->name('pastes.index');
 
-Route::domain('https://laravel.link')->group(function () {
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return Inertia\Inertia::render('Dashboard');
+})->name('dashboard');
+
+/*Route::domain('https://laravel.link')->group(function () {
     Route::get('/', function () {
         return view('welcome');
     });
@@ -33,6 +41,6 @@ Route::domain('https://laravel.link')->group(function () {
 Route::domain('https://pastes.laravel.link')->group(function () {
     Route::get('/', [PasteController::class, 'index'])->name('pastes.index');
 
-});
+});*/
 
 
