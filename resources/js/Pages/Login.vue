@@ -76,6 +76,7 @@ export default {
             },
         }
     },
+
     methods: {
         submit() {
             const data = {

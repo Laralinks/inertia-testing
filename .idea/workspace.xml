@@ -21,14 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ce5fc17d-4a3f-4e1b-a08a-11087fd23c55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/JetstreamServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/JetstreamServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/ziggy.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ziggy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +201,7 @@
       <updated>1601230202887</updated>
       <workItem from="1601230204728" duration="7589000" />
       <workItem from="1601282242852" duration="15425000" />
-      <workItem from="1601301376959" duration="15843000" />
+      <workItem from="1601301376959" duration="16330000" />
     </task>
     <servers />
   </component>
