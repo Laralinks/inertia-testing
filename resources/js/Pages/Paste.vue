@@ -67,6 +67,8 @@
 <script>
 import AppLayout from './../Layouts/AppLayout'
 import JetNavLink from './../Jetstream/NavLink'
+import JetResponsiveNavLink from './../Jetstream/ResponsiveNavLink'
+
 
 var moment = require('moment');
 export default {
