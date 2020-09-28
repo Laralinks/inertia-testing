@@ -11,27 +11,26 @@
         </div>
 
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-
-            <form method="POST" :action="route('login').url()">
+            <form method="POST" action="/login">
                 <div>
                     <jet-label value="Email" />
-                    <jet-input class="block mt-1 w-full" type="email" name="email" value="" required autofocus />
+                    <jet-input  v-model="form.email" :error="errors.email" class="block mt-1 w-full" type="email" name="email" value="" required autofocus />
                 </div>
 
                 <div class="mt-4">
                     <jet-label value="Password" />
-                    <jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                    <jet-input v-model="form.password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
                 </div>
 
                 <div class="block mt-4">
                     <label class="flex items-center">
-                        <input type="checkbox" class="form-checkbox" name="remember">
+                        <input v-model="form.remember" type="checkbox" class="form-checkbox" name="remember">
                         <span class="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" :href="route('password.request').url()">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="#">
                         Forgot your password?
                     </a>
 
@@ -65,7 +64,7 @@ export default {
         JetButton
     },
     props: {
-        errors,
+        errors: Object,
     },
     data() {
         return {
@@ -73,13 +72,25 @@ export default {
             form: {
                 email: 'johndoe@example.com',
                 password: 'secret',
-                remember: null,
+                remember: false,
             },
         }
     },
-
-
+    methods: {
+        submit() {
+            const data = {
+                email: this.form.email,
+                password: this.form.password,
+                remember: this.form.remember,
+            }
+            this.$inertia.post('/login', data, {
+                onStart: () => this.sending = true,
+                onFinish: () => this.sending = false,
+            })
+        },
+    },
 }
+
 </script>
 
 <style scoped>

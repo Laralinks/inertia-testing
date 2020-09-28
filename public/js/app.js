@@ -3640,7 +3640,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -3656,7 +3655,7 @@ __webpack_require__.r(__webpack_exports__);
     JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   props: {
-    errors: errors
+    errors: Object
   },
   data: function data() {
     return {
@@ -3664,9 +3663,28 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         email: 'johndoe@example.com',
         password: 'secret',
-        remember: null
+        remember: false
       }
     };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      var data = {
+        email: this.form.email,
+        password: this.form.password,
+        remember: this.form.remember
+      };
+      this.$inertia.post('/login', data, {
+        onStart: function onStart() {
+          return _this.sending = true;
+        },
+        onFinish: function onFinish() {
+          return _this.sending = false;
+        }
+      });
+    }
   }
 });
 
@@ -49417,100 +49435,141 @@ var render = function() {
             "w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
         },
         [
-          _c(
-            "form",
-            { attrs: { method: "POST", action: _vm.route("login").url() } },
-            [
-              _c(
-                "div",
-                [
-                  _c("jet-label", { attrs: { value: "Email" } }),
-                  _vm._v(" "),
-                  _c("jet-input", {
-                    staticClass: "block mt-1 w-full",
-                    attrs: {
-                      type: "email",
-                      name: "email",
-                      value: "",
-                      required: "",
-                      autofocus: ""
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "mt-4" },
-                [
-                  _c("jet-label", { attrs: { value: "Password" } }),
-                  _vm._v(" "),
-                  _c("jet-input", {
-                    staticClass: "block mt-1 w-full",
-                    attrs: {
-                      type: "password",
-                      name: "password",
-                      required: "",
-                      autocomplete: "current-password"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "flex items-center justify-end mt-4" },
-                [
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "underline text-sm text-gray-600 hover:text-gray-900",
-                      attrs: { href: _vm.route("password.request").url() }
+          _c("form", { attrs: { method: "POST", action: "/login" } }, [
+            _c(
+              "div",
+              [
+                _c("jet-label", { attrs: { value: "Email" } }),
+                _vm._v(" "),
+                _c("jet-input", {
+                  staticClass: "block mt-1 w-full",
+                  attrs: {
+                    error: _vm.errors.email,
+                    type: "email",
+                    name: "email",
+                    value: "",
+                    required: "",
+                    autofocus: ""
+                  },
+                  model: {
+                    value: _vm.form.email,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "email", $$v)
                     },
-                    [
-                      _vm._v(
-                        "\n                    Forgot your password?\n                "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("jet-button", { staticClass: "ml-4" }, [
-                    _vm._v("\n                    Login\n                ")
-                  ])
-                ],
-                1
-              )
-            ]
-          )
+                    expression: "form.email"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mt-4" },
+              [
+                _c("jet-label", { attrs: { value: "Password" } }),
+                _vm._v(" "),
+                _c("jet-input", {
+                  staticClass: "block mt-1 w-full",
+                  attrs: {
+                    type: "password",
+                    name: "password",
+                    required: "",
+                    autocomplete: "current-password"
+                  },
+                  model: {
+                    value: _vm.form.password,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "password", $$v)
+                    },
+                    expression: "form.password"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "block mt-4" }, [
+              _c("label", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.remember,
+                      expression: "form.remember"
+                    }
+                  ],
+                  staticClass: "form-checkbox",
+                  attrs: { type: "checkbox", name: "remember" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.remember)
+                      ? _vm._i(_vm.form.remember, null) > -1
+                      : _vm.form.remember
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.remember,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "remember", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "remember",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "remember", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "ml-2 text-sm text-gray-600" }, [
+                  _vm._v("Remember me")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex items-center justify-end mt-4" },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "underline text-sm text-gray-600 hover:text-gray-900",
+                    attrs: { href: "#" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    Forgot your password?\n                "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("jet-button", { staticClass: "ml-4" }, [
+                  _vm._v("\n                    Login\n                ")
+                ])
+              ],
+              1
+            )
+          ])
         ]
       )
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "block mt-4" }, [
-      _c("label", { staticClass: "flex items-center" }, [
-        _c("input", {
-          staticClass: "form-checkbox",
-          attrs: { type: "checkbox", name: "remember" }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "ml-2 text-sm text-gray-600" }, [
-          _vm._v("Remember me")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -65879,9 +65938,9 @@ var Ziggy = {
       "domain": "laravel.link"
     }
   },
-  baseUrl: 'https://laravel.link',
-  baseProtocol: 'https',
-  baseDomain: 'laravel.link',
+  baseUrl: 'http://localhost',
+  baseProtocol: 'http',
+  baseDomain: 'localhost',
   basePort: false,
   defaultParameters: []
 };

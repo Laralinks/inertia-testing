@@ -11,7 +11,7 @@ class PasteController extends Controller
 {
 
     public function index() {
-        $pastes = Paste::where(['private' => false, 'password' => null])->latest()->paginate();
+        $pastes = Paste::where(['private' => false, 'password' => null])->latest()->paginate(3);
         return Inertia::render('Paste', ['pastes' => $pastes]);
     }
 }
