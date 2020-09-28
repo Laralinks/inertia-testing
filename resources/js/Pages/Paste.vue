@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <div class="bg-gray-200 bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l" v-for="paste in pastes" :key="paste.id">
+                                    <div class="bg-gray-200 bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l" v-for="paste in pastes.data" :key="paste.id">
                                         <div class="justify-between items-center flex">
                                             <span class="font-light text-gray-600">{{ moment(paste.created_at).fromNow() }}</span>
                                             <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500"
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="p-6 sm:px-20 bg-white">
                                     <div class="mt-1 text-2xl">
-                                        Pagination
+                                        <pagination :links="pastes.links" />
                                     </div>
                                 </div>
                             </div>
@@ -68,12 +68,14 @@
 import AppLayout from './../Layouts/AppLayout'
 import JetNavLink from './../Jetstream/NavLink'
 import JetResponsiveNavLink from './../Jetstream/ResponsiveNavLink'
+import Pagination from './../Shared/Pagination'
+
 
 
 var moment = require('moment');
 export default {
     name: "Paste",
-    components: {AppLayout, JetNavLink},
+    components: {AppLayout, JetNavLink, Pagination},
     props: ['pastes'],
     data() {
         return {
