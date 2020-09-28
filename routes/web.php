@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain('https://pastes.laravel.link')->group(function () {
-    Route::get('/', [PasteController::class, 'index']);
-
-});
 
 Route::domain('https://laravel.link')->group(function () {
     Route::get('/', function () {
@@ -29,5 +25,11 @@ Route::domain('https://laravel.link')->group(function () {
     })->name('dashboard');
 });
 
+
+
+Route::domain('https://pastes.laravel.link')->group(function () {
+    Route::get('/', [PasteController::class, 'index'])->name('pastes.index');
+
+});
 
 

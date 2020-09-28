@@ -17,6 +17,9 @@
                             <jet-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
                                 Dashboard
                             </jet-nav-link>
+                            <jet-nav-link href="https://pastes.laravel.link" :active="$page.currentRouteName == 'pastes.index'">
+                                Pastes
+                            </jet-nav-link>
                         </div>
                     </div>
 
@@ -110,6 +113,9 @@
                 <div class="pt-2 pb-3 space-y-1">
                     <jet-responsive-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
                         Dashboard
+                    </jet-responsive-nav-link>
+                    <jet-responsive-nav-link href="https://pastes.laravel.link" :active="$page.currentRouteName == 'pastes.index'">
+                        Pastes
                     </jet-responsive-nav-link>
                 </div>
 

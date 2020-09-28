@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ce5fc17d-4a3f-4e1b-a08a-11087fd23c55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Paste.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Paste.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601230202887</updated>
       <workItem from="1601230204728" duration="7589000" />
-      <workItem from="1601282242852" duration="646000" />
+      <workItem from="1601282242852" duration="1847000" />
     </task>
     <servers />
   </component>
