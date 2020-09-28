@@ -47639,7 +47639,7 @@ var render = function() {
                     "jet-nav-link",
                     {
                       attrs: {
-                        href: "/dashboard",
+                        href: _vm.route("dashboard"),
                         active: _vm.$page.currentRouteName == "dashboard"
                       }
                     },
@@ -47654,7 +47654,7 @@ var render = function() {
                     "jet-nav-link",
                     {
                       attrs: {
-                        href: "https://pastes.laravel.link",
+                        href: _vm.route("pastes.index"),
                         active: _vm.$page.currentRouteName == "pastes.index"
                       }
                     },

@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ce5fc17d-4a3f-4e1b-a08a-11087fd23c55" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Paste.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Paste.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +201,7 @@
       <updated>1601230202887</updated>
       <workItem from="1601230204728" duration="7589000" />
       <workItem from="1601282242852" duration="15425000" />
-      <workItem from="1601301376959" duration="3766000" />
+      <workItem from="1601301376959" duration="4320000" />
     </task>
     <servers />
   </component>
