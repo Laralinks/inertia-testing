@@ -15,7 +15,7 @@ class PasteController extends Controller
         //$pastes = Pastes::collection($query);
         $pastes = Paste::where(['private' => false, 'password' => null])->latest()->get();
         //$pastes = Paste::all();
-       // dump($pastes->first());
+       dump($pastes);
         return Inertia::render('Paste', ['pastes' => $pastes]);
     }
 }
