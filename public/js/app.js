@@ -49608,86 +49608,92 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {},
-                    _vm._l(_vm.pastes.data, function(paste) {
-                      return _c(
+                  _vm.pastes.data.length != 0
+                    ? _c(
                         "div",
-                        {
-                          key: paste.id,
-                          staticClass:
-                            "bg-gray-200 bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l"
-                        },
-                        [
-                          _c(
+                        {},
+                        _vm._l(_vm.pastes.data, function(paste) {
+                          return _c(
                             "div",
                             {
-                              staticClass: "justify-between items-center flex"
+                              key: paste.id,
+                              staticClass:
+                                "bg-gray-200 bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l"
                             },
                             [
                               _c(
-                                "span",
-                                { staticClass: "font-light text-gray-600" },
+                                "div",
+                                {
+                                  staticClass:
+                                    "justify-between items-center flex"
+                                },
                                 [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.moment(paste.created_at).fromNow()
-                                    )
+                                  _c(
+                                    "span",
+                                    { staticClass: "font-light text-gray-600" },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.moment(paste.created_at).fromNow()
+                                        )
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500",
+                                      attrs: { href: "#" }
+                                    },
+                                    [_vm._v(_vm._s(paste.pastelanguage.name))]
                                   )
                                 ]
                               ),
                               _vm._v(" "),
+                              _c("div", { staticClass: "mt-2" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass:
+                                      "text-2xl text-gray-700 font-bold hover:text-gray-600",
+                                    attrs: { href: "#" }
+                                  },
+                                  [_vm._v(_vm._s(paste.title))]
+                                ),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "mt-2 text-gray-600" }, [
+                                  _c("code", [
+                                    _vm._v(_vm._s(paste.description))
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
                               _c(
-                                "a",
+                                "div",
                                 {
                                   staticClass:
-                                    "px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500",
-                                  attrs: { href: "#" }
+                                    "flex justify-between items-center mt-4"
                                 },
-                                [_vm._v(_vm._s(paste.pastelanguage.name))]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-2" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "text-2xl text-gray-700 font-bold hover:text-gray-600",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v(_vm._s(paste.title))]
-                            ),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "mt-2 text-gray-600" }, [
-                              _c("code", [_vm._v(_vm._s(paste.description))])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "flex justify-between items-center mt-4"
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "text-blue-600 hover:underline",
-                                  attrs: { href: "#" }
-                                },
-                                [_vm._v("View Paste")]
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "text-blue-600 hover:underline",
+                                      attrs: { href: "#" }
+                                    },
+                                    [_vm._v("View Paste")]
+                                  )
+                                ]
                               )
                             ]
                           )
-                        ]
+                        }),
+                        0
                       )
-                    }),
-                    0
-                  ),
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("div", { staticClass: "p-6 sm:px-20 bg-white" }, [
                     _c(

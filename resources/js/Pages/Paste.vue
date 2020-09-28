@@ -26,7 +26,7 @@
                                         Latest Pastes
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="" v-if="pastes.data.length != 0">
                                     <div class="bg-gray-200 bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l" v-for="paste in pastes.data" :key="paste.id">
                                         <div class="justify-between items-center flex">
                                             <span class="font-light text-gray-600">{{ moment(paste.created_at).fromNow() }}</span>
