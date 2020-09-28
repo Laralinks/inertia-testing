@@ -21,34 +21,16 @@ import JetResponsiveNavLink from './../Jetstream/ResponsiveNavLink'
 
 export default {
     components: {
-        JetApplicationLogo,
-        JetApplicationMark,
-        JetDropdown,
-        JetDropdownLink,
-        JetNavLink,
-        JetResponsiveNavLink,
+
     },
 
     data() {
         return {
-            showingNavigationDropdown: false,
         }
     },
 
     methods: {
-        switchToTeam(team) {
-            this.$inertia.put('/current-team', {
-                'team_id': team.id
-            }, {
-                preserveState: false
-            })
-        },
 
-        logout() {
-            axios.post('/logout').then(response => {
-                window.location = '/';
-            })
-        },
     },
 
     computed: {

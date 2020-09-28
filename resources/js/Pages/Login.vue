@@ -11,8 +11,9 @@
         </div>
 
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-            <form method="POST" action="/login">
-                <div>
+            <form @submit.prevent="submit">
+
+            <div>
                     <jet-label value="Email" />
                     <jet-input  v-model="form.email" :error="errors.email" class="block mt-1 w-full" type="email" name="email" value="" required autofocus />
                 </div>
@@ -48,7 +49,7 @@
     </div>
 </template>
 <script>
-import GuestLayout from "../Layouts/GuestLayout";
+import GuestLayout from "../Layouts/AppLayout";
 import JetNavLink from "../Jetstream/NavLink";
 import JetLabel from "../Jetstream/Label";
 import JetInput from "../Jetstream/Input";
@@ -72,7 +73,7 @@ export default {
             form: {
                 email: 'johndoe@example.com',
                 password: 'secret',
-                remember: false,
+                remember: null,
             },
         }
     },

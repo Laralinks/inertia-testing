@@ -33,7 +33,8 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::deleteUsersUsing(DeleteUser::class);
 
         Fortify::loginView(function (Request $request) {
-            return inertia('Login')->toResponse($request);
+            //return inertia('Login')->toResponse($request);
+            return inertia::render('Login')->toResponse($request);
         });
     }
 
