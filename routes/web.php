@@ -19,11 +19,15 @@ Route::domain('https://pastes.laravel.link')->group(function () {
 
 });
 
+Route::domain('https://laravel.link')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+        return Inertia\Inertia::render('Dashboard');
+    })->name('dashboard');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+
+
