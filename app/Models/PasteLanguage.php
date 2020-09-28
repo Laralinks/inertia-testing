@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PasteLanguage extends Model
+class Pastelanguage extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-
     public function paste()
     {
-        return $this->belongsTo(Paste::class, 'paste_language_id');
+        return $this->belongsTo(Paste::class, 'pastelanguage_id');
     }
-
 }

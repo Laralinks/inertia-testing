@@ -16,6 +16,11 @@ class Paste extends Model
         'pastelanguage'
     ];
 
+    protected $appends =
+        [
+            'pastelanguage'
+        ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -23,6 +28,11 @@ class Paste extends Model
 
     public function pastelanguage()
     {
-        return $this->belongsTo(PasteLanguage::class, 'paste_language_id');
+        return $this->belongsTo(PasteLanguage::class, 'pastelanguage_id');
     }
+
+    public function getPastelanguageAttribute() {
+        return "test";
+    }
+
 }
